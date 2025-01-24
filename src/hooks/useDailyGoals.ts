@@ -1,46 +1,46 @@
-import { useState, useEffect } from 'react';
-import { DailyGoal, GoalCategory } from '../types/goals';
+import { useState, useEffect } from "react";
+import { DailyGoal, GoalCategory } from "../types/goals";
 
 const mockGoals: DailyGoal[] = [
   {
-    id: '1',
-    title: 'Daily Steps',
-    target: '10,000 steps',
+    id: "1",
+    title: "Daily Steps",
+    target: "10,000 steps",
     completed: false,
     category: GoalCategory.FITNESS,
-    icon: '👣',
+    icon: "👣",
   },
   {
-    id: '2',
-    title: 'Water',
-    target: '3L',
+    id: "2",
+    title: "Water",
+    target: "3L",
     completed: false,
     category: GoalCategory.HEALTH,
-    icon: '💧',
+    icon: "💧",
   },
   {
-    id: '3',
-    title: 'Protein',
-    target: '120g',
+    id: "3",
+    title: "Protein",
+    target: "120g",
     completed: false,
     category: GoalCategory.NUTRITION,
-    icon: '🥩',
+    icon: "🥩",
   },
   {
-    id: '4',
-    title: 'Run',
-    target: '30 minutes',
+    id: "4",
+    title: "Run",
+    target: "30 minutes",
     completed: false,
     category: GoalCategory.FITNESS,
-    icon: '🏃',
+    icon: "🏃",
   },
   {
-    id: '5',
-    title: 'Bodybuilding',
-    target: '60 minutes',
+    id: "5",
+    title: "Bodybuilding",
+    target: "60 minutes",
     completed: false,
     category: GoalCategory.FITNESS,
-    icon: '🏋️‍♂️',
+    icon: "🏋️‍♂️",
   },
 ];
 
@@ -62,8 +62,8 @@ export function useDailyGoals(): UseDailyGoalsReturn {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         setGoals(mockGoals);
         setIsLoading(false);
-      } catch (err) {
-        setError('Error loading daily goals');
+      } catch {
+        setError("Error loading daily goals");
         setIsLoading(false);
       }
     };
@@ -80,4 +80,4 @@ export function useDailyGoals(): UseDailyGoalsReturn {
   };
 
   return { goals, isLoading, error, toggleGoal };
-} 
+}

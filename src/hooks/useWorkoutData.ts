@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { WorkoutData, WorkoutType } from '../types/workout';
+import { useState, useEffect } from "react";
+import { WorkoutData, WorkoutType } from "../types/workout";
 
 interface UseWorkoutDataReturn {
   workoutData: WorkoutData[];
@@ -17,43 +17,43 @@ export function useWorkoutData(): UseWorkoutDataReturn {
       try {
         const mockData: WorkoutData[] = [
           {
-            day: 'Monday',
+            day: "Monday",
             duration: 45,
             calories: 300,
             type: WorkoutType.CARDIO,
           },
           {
-            day: 'Tuesday',
+            day: "Tuesday",
             duration: 60,
             calories: 400,
             type: WorkoutType.STRENGTH,
           },
           {
-            day: 'Wednesday',
+            day: "Wednesday",
             duration: 30,
             calories: 200,
             type: WorkoutType.CARDIO,
           },
           {
-            day: 'Thursday',
+            day: "Thursday",
             duration: 50,
             calories: 350,
             type: WorkoutType.STRENGTH,
           },
           {
-            day: 'Friday',
+            day: "Friday",
             duration: 55,
             calories: 380,
             type: WorkoutType.CARDIO,
           },
           {
-            day: 'Saturday',
+            day: "Saturday",
             duration: 40,
             calories: 250,
             type: WorkoutType.STRENGTH,
           },
           {
-            day: 'Sunday',
+            day: "Sunday",
             duration: 0,
             calories: 0,
             type: WorkoutType.REST,
@@ -62,8 +62,8 @@ export function useWorkoutData(): UseWorkoutDataReturn {
         await new Promise((resolve) => setTimeout(resolve, 1500));
         setWorkoutData(mockData);
         setIsLoading(false);
-      } catch (err) {
-        setError('Error loading workout data');
+      } catch {
+        setError("Error loading workout data");
         setIsLoading(false);
       }
     };
@@ -72,4 +72,4 @@ export function useWorkoutData(): UseWorkoutDataReturn {
   }, []);
 
   return { workoutData, isLoading, error };
-} 
+}

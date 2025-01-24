@@ -1,6 +1,5 @@
-import React from 'react';
-import { useDailyGoals } from '../../hooks/useDailyGoals';
-import './DailyGoalsChecklist.css';
+import { useDailyGoals } from "../../hooks/useDailyGoals";
+import "./DailyGoalsChecklist.css";
 
 export function DailyGoalsChecklist(): JSX.Element {
   const { goals, isLoading, error, toggleGoal } = useDailyGoals();
@@ -20,12 +19,12 @@ export function DailyGoalsChecklist(): JSX.Element {
         {goals.map((goal) => (
           <div
             key={goal.id}
-            className={`goal-item ${goal.completed ? 'completed' : ''}`}
+            className={`goal-item ${goal.completed ? "completed" : ""}`}
             onClick={() => toggleGoal(goal.id)}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === "Enter" || e.key === " ") {
                 toggleGoal(goal.id);
               }
             }}
@@ -59,4 +58,4 @@ export function DailyGoalsChecklist(): JSX.Element {
       </div>
     </div>
   );
-} 
+}

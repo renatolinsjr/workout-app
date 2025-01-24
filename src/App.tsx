@@ -1,8 +1,7 @@
-import React from 'react'
-import './App.css'
-import { WeeklyWorkoutChart } from './components/WeeklyWorkoutChart/WeeklyWorkoutChart'
-import { DailyGoalsChecklist } from './components/DailyGoalsChecklist/DailyGoalsChecklist'
-import { QuickActions } from './components/QuickActions/QuickActions'
+import "./App.css";
+import { WeeklyWorkoutChart } from "./components/WeeklyWorkoutChart/WeeklyWorkoutChart";
+import { DailyGoalsChecklist } from "./components/DailyGoalsChecklist/DailyGoalsChecklist";
+import { QuickActions } from "./components/QuickActions/QuickActions";
 
 export function App(): JSX.Element {
   return (
@@ -16,7 +15,7 @@ export function App(): JSX.Element {
         <WeeklyWorkoutChart />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

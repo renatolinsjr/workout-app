@@ -1,6 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './QuickActions.css';
+import { motion } from "framer-motion";
+import "./QuickActions.css";
 
 interface QuickAction {
   id: string;
@@ -12,25 +11,25 @@ interface QuickAction {
 
 const actions: QuickAction[] = [
   {
-    id: 'start-workout',
-    title: 'Start Workout',
-    icon: '🏋️‍♂️',
-    color: '#4CAF50',
-    onClick: () => console.log('Starting workout...'),
+    id: "start-workout",
+    title: "Start Workout",
+    icon: "🏋️‍♂️",
+    color: "#4CAF50",
+    onClick: () => console.log("Starting workout..."),
   },
   {
-    id: 'view-progress',
-    title: 'View Progress',
-    icon: '📊',
-    color: '#2196F3',
-    onClick: () => console.log('Viewing progress...'),
+    id: "view-progress",
+    title: "View Progress",
+    icon: "📊",
+    color: "#2196F3",
+    onClick: () => console.log("Viewing progress..."),
   },
   {
-    id: 'set-goals',
-    title: 'Set Goals',
-    icon: '🎯',
-    color: '#FF9800',
-    onClick: () => console.log('Setting goals...'),
+    id: "set-goals",
+    title: "Set Goals",
+    icon: "🎯",
+    color: "#FF9800",
+    onClick: () => console.log("Setting goals..."),
   },
 ];
 
@@ -50,7 +49,7 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 300,
       damping: 24,
     },
@@ -74,7 +73,7 @@ export function QuickActions(): JSX.Element {
             variants={itemVariants}
             whileHover={{
               scale: 1.05,
-              transition: { type: 'spring', stiffness: 400 },
+              transition: { type: "spring", stiffness: 400 },
             }}
             whileTap={{ scale: 0.95 }}
             style={{
@@ -87,13 +86,13 @@ export function QuickActions(): JSX.Element {
             <span className="action-title">{action.title}</span>
             <motion.div
               className="action-shine"
-              initial={{ x: '-100%' }}
-              whileHover={{ x: '100%' }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "100%" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
             />
           </motion.button>
         ))}
       </div>
     </motion.div>
   );
-} 
+}
