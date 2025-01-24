@@ -1,0 +1,162 @@
+.daily-goals-checklist {
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.goals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goal-item {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goal-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-wrapper {
+  margin-right: 16px;
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #cbd5e0;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  color: white;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.2s ease;
+}
+
+.goal-item.completed .custom-checkbox {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.goal-item.completed .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.goal-content {
+  flex: 1;
+}
+
+.goal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.goal-icon {
+  font-size: 1.2rem;
+}
+
+.goal-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.goal-details {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.goal-target {
+  padding: 2px 8px;
+  background-color: #e2e8f0;
+  border-radius: 12px;
+}
+
+.goal-category {
+  color: #94a3b8;
+}
+
+.goal-item.completed .goal-title,
+.goal-item.completed .goal-details {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.goal-item {
+  animation: slideIn 0.3s ease forwards;
+}
+
+@media (max-width: 480px) {
+  .daily-goals-checklist {
+    padding: 12px;
+  }
+
+  .goal-item {
+    padding: 12px;
+  }
+
+  .goal-title {
+    font-size: 0.9rem;
+  }
+
+  .goal-details {
+    font-size: 0.75rem;
+  }
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+}
+
+.error {
+  color: #ef4444;
+} 
